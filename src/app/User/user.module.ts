@@ -5,7 +5,7 @@ import {MatButtonModule} from "@angular/material/button"
 import { LoginComponent } from "./components/login/login.component"
 import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from './components/home/home.component'
-
+import {MatIconModule} from "@angular/material/icon"
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import { HomeComponent } from './components/home/home.component'
     imports:[
         CommonModule,
         UserRoutingModule,
-        MatButtonModule
+        MatButtonModule,
+        MatIconModule
         
 
     ]
