@@ -41,7 +41,6 @@
         backdrop-filter: saturate(200%) blur(25px);
       }
     </style>
-  <form [formGroup]="registerForm" (ngSubmit)="isSubmit()">
     <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
       <div class="row gx-lg-5 align-items-center mb-5">
         <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
@@ -60,7 +59,7 @@
   
           <div class="card bg-glass">
             <div class="card-body px-4 py-5 px-md-5">
-              <form>
+              <form [formGroup]="registerForm" (ngSubmit)="isSubmit()">
                 <div class="form-outline mb-4">
                     <h1 style="font-family: fantasy;" >Sign up</h1>
                    </div>
@@ -68,28 +67,33 @@
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example1" class="form-control" />
+                      <input [ngClass]="{'notvalid': fname && fname.invalid && fname.touched}" type="text" id="form3Example1" formControlName="fname" class="form-control" />
                       <label class="form-label" for="form3Example1">First name</label>
                     </div>
+                    <span *ngIf="fname && fname.invalid && fname.touched" style="color: red;">please correct your firstname</span>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <input type="text" id="form3Example2" class="form-control" />
+                      <input [ngClass]="{'notvalid': lname && lname.invalid && lname.touched}" type="text" id="form3Example2" formControlName="lname" class="form-control" />
                       <label class="form-label" for="form3Example2">Last name</label>
                     </div>
+                    <span *ngIf="lname && lname.invalid && lname.touched" style="color: red;">please correct your lastname</span>
                   </div>
                 </div>
   
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
+                  <input [ngClass]="{'notvalid': email && email.invalid && email.touched}" type="email" id="form3Example3" formControlName="email"  class="form-control" />
                   <label class="form-label" for="form3Example3">Email address</label>
+                <span *ngIf="email && email.invalid && email.touched" style="color: red;display: flex;justify-content: center;">please correct your email</span>
+
                 </div>
   
                 <!-- Password input -->
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
+                <div  class="form-outline mb-4">
+                  <input [ngClass]="{'notvalid': password && password.invalid && password.touched}" type="password" id="form3Example4" formControlName="password"  class="form-control" />
                   <label class="form-label" for="form3Example4">Password</label>
+                 <span  *ngIf="password && password.invalid && password.touched" style="color: red;display: flex;justify-content: center;">password must be 8 letters</span>
                 </div>
   
                 <!-- Checkbox -->
@@ -111,7 +115,7 @@
                   </button>
   
                   <div class="submit-div" >
-                    <button type="submit" mat-raised-button class="submit-btn" color="primary" >
+                    <button type="submit" [disabled]="registerForm.invalid" mat-raised-button class="submit-btn" color="primary" >
                       Sign up
                     </button>
                 </div>
@@ -134,6 +138,11 @@
         GCuhHtSu9UVz1dCvI3/TIRaKdXmB9uj8mzr78RuRa7bNcIE0AkbHDFLsyqb3xNAjeqbcXZ7wTVHstnifuehYTjZM3m8mvhTkzurXvKl7eMr9IXG70a0tWXJ60Bvh11u82UfXB38ajltzB
         eRmyBWLtdrZWa1WO18xMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAQ/wNhUPDo3tE+ZAAAAABJRU5ErkJggg==" alt=""> Sign up with google </button>
     </div>
+    <hr>
+    <p>do you have any account ? <a [routerLink]="['']" routerLinkActive="router-link-active" >login now</a></p>
+    <button type="button" class="btn btn-link btn-floating mx-1">
+      <i class="fab fa-facebook-f"></i>
+    </button>
                 </div>
               </form>
             </div>
@@ -141,6 +150,5 @@
         </div>
       </div>
     </div>
-  </form>
   </section>
   <!-- Section: Design Block -->

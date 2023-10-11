@@ -6,20 +6,25 @@ import { LoginComponent } from "./components/login/login.component"
 import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from './components/home/home.component'
 import {MatIconModule} from "@angular/material/icon"
+import { ReactiveFormsModule } from "@angular/forms"
+import { HttpClientModule } from "@angular/common/http"
 
 
 @NgModule({
     declarations:[
         LoginComponent, 
-        RegisterComponent, HomeComponent
+        RegisterComponent,
+        HomeComponent
     ],
     imports:[
         CommonModule,
         UserRoutingModule,
         MatButtonModule,
-        MatIconModule
-        
+        MatIconModule,
+        ReactiveFormsModule,
+        HttpClientModule
 
+    
     ]
 })
 
