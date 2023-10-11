@@ -64,7 +64,7 @@
   
           <div class="card bg-glass">
             <div class="card-body px-4 py-5 px-md-5">
-              <form>
+              <form [formGroup]="loginform" (ngSubmit)="isSubmit()">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="form-outline mb-4">
                    <h1 style="font-family: fantasy;" >Login</h1>
@@ -72,27 +72,32 @@
   
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3" class="form-control" />
+                  <input [ngClass]="{'notvalid': email && email.invalid && email.touched}" type="email" id="form3Example3" formControlName="email" class="form-control" />
                   <label class="form-label" for="form3Example3">Email address</label>
+                <span *ngIf="email && email.invalid && email.touched" style="color: red;display: flex;justify-content: center;">please correct your email</span>
+
                 </div>
   
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4" class="form-control" />
+                  <input [ngClass]="{'notvalid': password && password.invalid && password.touched}" type="password" id="form3Example4" formControlName="password" class="form-control" />
                   <label class="form-label" for="form3Example4">Password</label>
+                <span  *ngIf="password && password.invalid && password.touched" style="color: red;display: flex;justify-content: center;">password must be 8 letters</span>
+
                 </div>
+
   
-                <!-- Checkbox -->
+                <!-- Checkbox
                 <div class="form-check d-flex justify-content-center mb-4">
                   <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
                   <label class="form-check-label" for="form2Example33">
                     Subscribe to our newsletter
                   </label>
-                </div>
+                </div> -->
   
                 <!-- Submit button -->
                 <div class="submit-div" >
-                <button type="submit" mat-raised-button class="submit-btn" color="primary" >
+                <button [disabled]="loginform.invalid" type="submit" mat-raised-button class="submit-btn" color="primary" >
                   Log in
                 </button>
             </div>
@@ -117,8 +122,9 @@
 </div>
 
                 <!-- Register buttons -->
+                <hr>
                 <div class="text-center mt-2">
-                  <p>don't have any account ? <a href="">register now</a></p>
+                  <p>don't have any account ? <a [routerLink]="['/register']" routerLinkActive="router-link-active" >register now</a></p>
                   <button type="button" class="btn btn-link btn-floating mx-1">
                     <i class="fab fa-facebook-f"></i>
                   </button>
