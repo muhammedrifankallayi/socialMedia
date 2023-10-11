@@ -1,0 +1,51 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars from appearing */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio */
+    z-index: -1; /* Place the video behind other content */
+}
+
+/* Style your content and overlay elements here */
+
+.card{
+   background-color: rgba(212, 158, 65, 0.422);
+    color: aliceblue;
+    height: 60vh;
+}
+
+.container h1{
+    color: rgba(240, 248, 255, 0.853);
+    
+}
+.card-header{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+
+.chat-list{
+    height: 60vh;
+    background-color: rgba(179, 194, 194, 0.223);
+}
+
+@media(max-width:768px){
+    .card{
+        display: none;
+    }
+}

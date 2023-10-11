@@ -1,0 +1,14 @@
+
+.submit-div{
+    display: flex;
+    justify-content: center;
+}
+
+
+.submit-btn{
+    width: 70%;
+}
+
+section{
+    overflow: hidden;
+}
