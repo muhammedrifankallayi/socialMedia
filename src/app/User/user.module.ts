@@ -5,19 +5,24 @@ import {MatButtonModule} from "@angular/material/button"
 import { LoginComponent } from "./components/login/login.component"
 import { RegisterComponent } from "./components/register/register.component";
 import { HomeComponent } from './components/home/home.component'
-import {MatIconModule} from "@angular/material/icon"
+import {MatIconModule} from "@angular/material/icon";
+import { ChatPageComponent } from './components/chat-page/chat-page.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MobileVerifyComponent } from './components/mobile-verify/mobile-verify.component'
+import { ReactiveFormsModule } from "@angular/forms"
 
 
 @NgModule({
     declarations:[
         LoginComponent, 
-        RegisterComponent, HomeComponent
+        RegisterComponent, HomeComponent, ChatPageComponent, DashboardComponent, MobileVerifyComponent
     ],
     imports:[
         CommonModule,
         UserRoutingModule,
         MatButtonModule,
-        MatIconModule
+        MatIconModule,
+        ReactiveFormsModule
         
 
     ]

@@ -1,0 +1,26 @@
+<div *ngIf="!showOtp" style="display: flex; justify-content: center; align-items: center; height: 50vh;  "  >
+    <div  class="bg-light p-3" >
+        <h2>Verify your Mobile Number</h2>
+        <div class="form-outline">
+            <input class="form-control" type="number" min="0" placeholder="Enter your mobile number">
+        </div>
+        <div style="display: flex; justify-content: center;" class="mt-2" >
+            <button mat-raised-button  color="primary" (click)="numberSubmit()" >Verify</button>
+        </div>
+    </div>
+</div>
+
+
+<section *ngIf="showOtp"  style="display: flex; justify-content: center; align-items: center; height: 50vh;" >
+    <div>
+    <h1>Enter Otp</h1>
+    <div class="form-outlet">
+        <input type="number" class="form-control" placeholder="enter-6 -digits" >
+
+    </div>
+    <div class="submit-btn center mt-2 ">
+        <button  style="border: 1px solid rgb(22, 22, 22);" mat-raised-button >submit</button>
+    </div>
+    <a href="">resend otp</a>
+</div>
+</section>
