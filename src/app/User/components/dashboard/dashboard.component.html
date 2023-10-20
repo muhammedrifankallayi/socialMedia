@@ -10,7 +10,12 @@
        <a mat-raised-button color="primary" class="me-2" style="width: 150px; height: 80px; " ><strong>Let's start</strong></a>
        <a mat-raised-button    style="width: 150px; height: 80px; " >Logout</a>
   </section>
-    
+    <div style="display: flex; justify-content: center;" >
+        <form  [formGroup]="formData" (ngSubmit)="Generate()" >
+            <input type="text" class="form-input" formControlName="name" placeholder="Enter something" > <button type="submit"  >generate</button>
+        </form>
+       
+    </div>
   <div class="container">
     <div class="row">
         <!-- First Card -->

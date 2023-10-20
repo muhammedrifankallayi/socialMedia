@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
-
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit{
-
+constructor(private afAuth:AngularFireAuth){}
 
   registerForm!:FormGroup
   ngOnInit(): void {
@@ -22,5 +22,12 @@ export class RegisterComponent implements OnInit{
  console.log('sf');
  
   }
+
+
+  
+
+
+
+
 
 }

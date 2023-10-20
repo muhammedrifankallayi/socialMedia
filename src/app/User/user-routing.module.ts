@@ -13,7 +13,8 @@ const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:"chatpage",component:ChatPageComponent},
   {path:"autherize",component:DashboardComponent},
-  {path:"mobile-verify",component:MobileVerifyComponent}
+  {path:"mobile-verify",component:MobileVerifyComponent},
+  
 ];
 
 @NgModule({
